@@ -1,0 +1,35 @@
+ARCHIVE_READ_ADD_PASS... BSD Library Functions Manual ARCHIVE_READ_ADD_PASS...
+
+NNAAMMEE
+     aarrcchhiivvee__rreeaadd__aadddd__ppaasssspphhrraassee, aarrcchhiivvee__rreeaadd__sseett__ppaasssspphhrraassee__ccaallllbbaacckk --
+     functions for reading encrypted archives
+
+LLIIBBRRAARRYY
+     Streaming Archive Library (libarchive, -larchive)
+
+SSYYNNOOPPSSIISS
+     ##iinncclluuddee <<aarrcchhiivvee..hh>>
+
+     _i_n_t
+     aarrcchhiivvee__rreeaadd__aadddd__ppaasssspphhrraassee(_s_t_r_u_c_t _a_r_c_h_i_v_e _*, _c_o_n_s_t _c_h_a_r _*_p_a_s_s_p_h_r_a_s_e);
+
+     _i_n_t
+     aarrcchhiivvee__rreeaadd__sseett__ppaasssspphhrraassee__ccaallllbbaacckk(_s_t_r_u_c_t _a_r_c_h_i_v_e _*, _v_o_i_d _*_c_l_i_e_n_t___d_a_t_a,
+         _a_r_c_h_i_v_e___p_a_s_s_p_h_r_a_s_e___c_a_l_l_b_a_c_k _*);
+
+DDEESSCCRRIIPPTTIIOONN
+     aarrcchhiivvee__rreeaadd__aadddd__ppaasssspphhrraassee()
+             Register passphrases for reading an encryption archive.  If
+             _p_a_s_s_p_h_r_a_s_e is NULL or empty, this function will do nothing and
+             AARRCCHHIIVVEE__FFAAIILLEEDD will be returned.  Otherwise, AARRCCHHIIVVEE__OOKK will be
+             returned.
+
+     aarrcchhiivvee__rreeaadd__sseett__ppaasssspphhrraassee__ccaallllbbaacckk()
+             Register callback function that will be invoked to get a
+             passphrase for decrption after trying all passphrases registered
+             by the aarrcchhiivvee__rreeaadd__aadddd__ppaasssspphhrraassee() function failed.
+
+SSEEEE AALLSSOO
+     tar(1), libarchive(3), archive_read(3), archive_read_set_options(3)
+
+BSD                           September 14, 2014                           BSD
